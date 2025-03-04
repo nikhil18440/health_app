@@ -36,6 +36,14 @@ const app = () => {
           </Text>
         {/* </Pressable> */}
       </Link>
+
+      <Link href="/welcome">
+        {/* <Pressable> */}
+          <Text style={styles.login}>
+            questions
+          </Text>
+        {/* </Pressable> */}
+      </Link>
       
     </View>
   )
