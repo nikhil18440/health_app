@@ -1,7 +1,16 @@
 import { View, Text, TextInput, StyleSheet, Pressable } from 'react-native'
 import React from 'react'
+import { Link } from 'expo-router'
 
 const welcome = () => {
+
+    let name = null
+
+    const handleName = (e) => {
+        name = e
+    }
+
+
   return (
     <View style={styles.container}>
 
@@ -10,10 +19,11 @@ const welcome = () => {
         <Text style={styles.head2}>We'd like to get to know you.</Text>
 
         {/* <br /> */}
-        <Text>Preffered first name</Text>
+        <Text>Prefered first name</Text>
         <TextInput
                 style={styles.input}
                 placeholderTextColor="grey"
+                onChange={(e) => handleName(e)}
             />
       </View>
 
@@ -21,12 +31,19 @@ const welcome = () => {
         <Pressable 
             style={styles.button}
         >
+            <Link href='/'
+            style={styles.buttonLink}>
             <Text style={styles.btnText}>Previous</Text>
+            </Link>
+
         </Pressable>
         <Pressable 
             style={styles.button}
         >
-            <Text style={styles.btnText}>Next</Text>
+            <Link href='/goals'
+            style={styles.buttonLink}>
+                <Text>next</Text>
+                    </Link>
         </Pressable>
       </View>
 
@@ -74,7 +91,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginBottom: 10,
         margin: 10,
-        borderRadius: 10
+        borderRadius: 10,
+        color: 'white'
     },
     btnText: {
         color: 'white',
@@ -82,6 +100,9 @@ const styles = StyleSheet.create({
     bottom:{
         display: 'flex',
         flexDirection: 'row'
+    },
+    buttonLink:{
+        color: 'white'
     }
 })
 

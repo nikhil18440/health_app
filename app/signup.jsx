@@ -46,7 +46,7 @@ const signup = () => {
 
                 <View style={styles.Signup}>
                     <Text>already a user? </Text>
-                    <Link href='Register' style={styles.register}>
+                    <Link href='login' style={styles.register}>
                         <Text>Sign In</Text>
                     </Link>
                 </View>
