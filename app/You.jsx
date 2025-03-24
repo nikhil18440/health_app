@@ -79,7 +79,7 @@ const You = () => {
           </Link>
         </Pressable>
         <Pressable style={styles.button} disabled={selectedOptions.length >=3 ? true : false}>
-          <Link href='/Activity' style={styles.buttonLink} >
+          <Link href='/Home' style={styles.buttonLink} >
           <Text style={[selectedOptions.length >=3 && { color: 'white' , backgroundColor: '#14A4FE'}]}>Next</Text>
           </Link>
         </Pressable>
