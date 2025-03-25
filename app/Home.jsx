@@ -1,5 +1,6 @@
-import { View, Text, StyleSheet, Image } from 'react-native'
+import { View, Text, StyleSheet, Image, Pressable } from 'react-native'
 import React from 'react'
+import { Link } from 'expo-router'
 
 const Home = () => {
 
@@ -37,7 +38,7 @@ const Home = () => {
       </View>
 
       <View style={styles.bottom}>
-      <View style={styles.titem}>
+      <Link style={styles.titem} href='/MentalHealth'>
             {/* <Image source={require('@/assets/images/health.png')} style={styles.titemImg}/> */}
             <Image source={require('@/assets/images/brain.png')} style={styles.mitem}/>
             
@@ -45,7 +46,7 @@ const Home = () => {
               <Text style={styles.titemText1}>Mental Health</Text>
               <Text style={styles.titemText2}>focus on physical health</Text>
             </View>
-        </View>
+        </Link>
       </View>
     
 
