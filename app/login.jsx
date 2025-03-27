@@ -30,11 +30,12 @@ const login = () => {
         placeholderTextColor='grey'
         secureTextEntry={true}
     />
-    <Pressable 
+    <Link 
+        href={'/Home'}
         style={styles.button}
     >
         <Text style={styles.btnText}>LOGIN</Text>
-    </Pressable>
+    </Link>
 
     <View style={styles.Signup}>
         <Text>dont't have an account? </Text>

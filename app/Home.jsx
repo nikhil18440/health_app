@@ -1,18 +1,44 @@
-import { View, Text, StyleSheet, Image, Pressable } from 'react-native'
+import { View, Text, StyleSheet, Image, Pressable, Dimensions } from 'react-native'
 import React from 'react'
 import { Link } from 'expo-router'
+import { ProgressChart } from 'react-native-chart-kit'
 
 const Home = () => {
 
   let points = 89
+
+  const data = {
+    labels: ["Swim", "Bike", "Run"], // optional
+    data: [0.4, 0.6, 0.8]
+  };
+
+  const chartConfig = {
+    backgroundGradientFrom: "#1E2923",
+    backgroundGradientFromOpacity: 0,
+    backgroundGradientTo: "#08130D",
+    backgroundGradientToOpacity: 0,
+    color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
+    strokeWidth: 2, // optional, default 3
+    barPercentage: 0.5,
+    useShadowColorFromDataset: false // optional
+  };
 
   return (
     <View style={styles.container}>
 
       <View style={styles.top}>
         <View style={styles.titem}>
-            {/* <Image source={require('@/assets/images/health.png')} style={styles.titemImg}/> */}
-            <View style={styles.titemImg}>
+        <ProgressChart
+          data={data}
+          width={Dimensions.get("window").width}
+          height={230}
+          strokeWidth={16}
+          radius={32}
+          chartConfig={chartConfig}
+          hideLegend={false}
+          style={styles.pBar}
+        />
+            {/* <View style={styles.titemImg}>
               <View style={styles.titemImgCircle}>
                 <Text style={styles.titemImgText}>{points}</Text>
                 
@@ -22,8 +48,9 @@ const Home = () => {
             <View style={styles.titemText}>
               <Text style={styles.titemText1}>Points</Text>
               <Text style={styles.titemText2}>do more tasks daily to earn more points and redeem them to get rewards</Text>
-            </View>
+            </View> */}
         </View>
+        
       </View>
       
       <View style={styles.middle}>
@@ -146,6 +173,9 @@ const styles = StyleSheet.create({
       width: '40%',
       height: '100%', 
       resizeMode: 'contain',
+    },
+    pBar:{
+      margin: 20
     }
 
 })

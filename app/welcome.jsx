@@ -9,6 +9,7 @@ const welcome = () => {
     const handleName = (e) => {
         name = e
     }
+    
 
 
   return (

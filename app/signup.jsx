@@ -38,11 +38,12 @@ const signup = () => {
                     placeholder="Password"
                     placeholderTextColor='grey'
                 />
-                <Pressable 
+                <Link
+                href={'/welcome'}
                     style={styles.button}
                 >
-                    <Text style={styles.btnText}>LOGIN</Text>
-                </Pressable>
+                    <Text style={styles.btnText}>SIGN UP</Text>
+                </Link>
 
                 <View style={styles.Signup}>
                     <Text>already a user? </Text>

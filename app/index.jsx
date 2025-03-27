@@ -1,79 +1,77 @@
-import { View, Text, StyleSheet,ImageBackground, Pressable } from 'react-native'
+import { View, Text, StyleSheet, ImageBackground, Image, TextInput, Pressable } from 'react-native'
 import React from 'react'
-import testImg from '@/assets/images/test.png'
 import { Link } from 'expo-router'
 
-const app = () => {
+const index = () => {
   return (
-    <View style={styles.container}>
-      {/* <ImageBackground
-        source={testImg}
-        resizeMode='cover'
-        style={styles.image}
-      > */}
-      <Text style={styles.textArea}>my app</Text>
-      {/* </ImageBackground> */}
+    
+    <View style={styles.container1}>
 
-      <Link href="/explore">
-        <Pressable>
-          <Text>
-            explore
-          </Text>
-        </Pressable>
-      </Link>
-      <Link href="/login">
-        {/* <Pressable> */}
-          <Text style={styles.login}>
-            login
-          </Text>
-        {/* </Pressable> */}
-      </Link>
-      
-      <Link href="/signings">
-        {/* <Pressable> */}
-          <Text style={styles.login}>
-            Signings
-          </Text>
-        {/* </Pressable> */}
-      </Link>
+        <View style={styles.Top}>
+          {/* <Image style={styles.TopImg} source={require('@/assets/images/heart.png')}/> */}
+          <Text style={styles.title}>Health App</Text>
+        </View>
 
-      <Link href="/welcome">
-        {/* <Pressable> */}
-          <Text style={styles.login}>
-            questions
-          </Text>
-        {/* </Pressable> */}
-      </Link>
-      
+        <View style={styles.Bottom}>
+            <Link href={'/login'} style={styles.button}>
+                <Text>Sign In</Text>
+            </Link>
+            <Link href={'/signup'} style={styles.button}>
+                <Text>Sign Up</Text>
+            </Link>
+            <Link href={''} style={styles.button}>
+                <Text>Sign in with Google</Text>
+            </Link>
     </View>
+
+    </View>
+    
   )
 }
 
-export default app
+export default index
 
 const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-    height: '50%',
-    // backgroundColor: 'red'
+    container1: {
+        backgroundColor: '#14A4FE',
+        width: '100%',
+        height: '100%',
+    },
+    Top: {
+        height: '50%',
+        width: '100%',
+        // backgroundColor: 'red'
+    },
+    Bottom: {
+        height: '50%',
+        width: '100%',
+        backgroundColor: 'white',
+        borderTopLeftRadius: 60,
+        borderTopRightRadius: 60,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    button:{
+      backgroundColor: 'white',
+      borderColor: '#14A4FE',
+      borderWidth: 1,
+      borderRadius: 10,
+      width: 300,
+      padding: 10,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginBottom: 10
   },
-  textArea: {
+  TopImg:{
     width: '100%',
-    height: '50%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    height: '70%'
+  },
+  title:{
+    fontSize: 30,
     textAlign: 'center',
-    backgroundColor: 'red'
-  },
-  image: {
-    resizeMode: 'cover',
-    height: '50%',
-    width: '50%'
-  },
-  login:{
-    // color: 'white',
-    fontSize: 20
+    color: 'white',
+    fontWeight: '700'
   }
-
 })
