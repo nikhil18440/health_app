@@ -1,7 +1,19 @@
 import { View, Text, StyleSheet, ImageBackground, Dimensions, ScrollView, Image, Pressable } from 'react-native'
 import React from 'react'
+import { Linking } from 'react-native';
 
 const Stress = () => {
+
+    
+
+const makeCall = (phoneNumber) => {
+  const url = `tel:${phoneNumber}`;
+  Linking.openURL(url).catch(err => console.error("Could not open dialer", err));
+};
+
+
+
+
   return (
     // <View>
     <ScrollView style={styles.mainDiv}>
@@ -44,7 +56,7 @@ const Stress = () => {
 <Text style={styles.DocSubHead}>Consultant psychiatrist</Text>
 <Text style={styles.DocText}>More than 10 years of experience in the field of Psychiatry, including 4 years of teaching in experience in different Medical Colleges</Text>
 
-<Pressable style={styles.callIcon}>
+<Pressable style={styles.callIcon} onPress={() => makeCall()}>
         <Image source={require('@/assets/images/call.png')} style={styles.callImg}/>
         <Text style={styles.buttonText}>Book an Appointment</Text>
 </Pressable>

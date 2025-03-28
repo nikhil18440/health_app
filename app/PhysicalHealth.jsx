@@ -1,25 +1,25 @@
-import { View, Text, CheckBox, Button, StyleSheet } from 'react-native';
+import { View, Text, CheckBox, Button, StyleSheet, Image } from 'react-native';
 import React, { useState } from 'react';
 import { Link } from 'expo-router';
 
 const PhysicalHealth = () => {  
-  const [tasks, setTasks] = useState({
-    pushUps: false,
-    pullUps: false,
-    Running: false,
-    sitUps: false
-  });
+  // const [tasks, setTasks] = useState({
+  //   pushUps: false,
+  //   pullUps: false,
+  //   Running: false,
+  //   sitUps: false
+  // });
 
-  const handleCheckboxChange = (task) => {
-    setTasks({ ...tasks, [task]: !tasks[task] });
+  // const handleCheckboxChange = (task) => {
+  //   setTasks({ ...tasks, [task]: !tasks[task] });
 
-  };
+  // };
 
-  const allTasksCompleted = Object.values(tasks).every(Boolean);
+  // const allTasksCompleted = Object.values(tasks).every(Boolean);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Daily Tasks</Text>
+      {/* <Text style={styles.header}>Daily Tasks</Text>
 
       <View style={styles.taskContainer}>
         <Text style={styles.taskText}>Do 20 Push Ups</Text>
@@ -43,42 +43,72 @@ const PhysicalHealth = () => {
 
           <Text >Task Completed</Text>
         </Link>
-      )}
+      )} */}
+
+      <View style={styles.item}>
+        <Image style={styles.itemImg} source={require('@/assets/images/google.png')}/>
+        <Text style={styles.itemText}>Push Ups</Text>
+      </View>
+      <View style={styles.item}>
+        <Image style={styles.itemImg}/>
+        <Text style={styles.itemText}>Push Ups</Text>
+      </View>
+      <View style={styles.item}>
+        <Image style={styles.itemImg}/>
+        <Text style={styles.itemText}>Push Ups</Text>
+      </View>
+      <View style={styles.item}>
+        <Image style={styles.itemImg}/>
+        <Text style={styles.itemText}>Push Ups</Text>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-    backgroundColor: '#f0f0f0',
+
+  container:{
+    width: '100vw',
+    height:'100vh',
+    backgroundColor:'black'
   },
-  header: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-  taskContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 10,
-    width: '100%',
-    justifyContent: 'space-between',
-    borderWidth: 1,
-    borderBlockColor: 'green',
-    padding: 10,
-  },
-  taskText: {
-    fontSize: 20,
-    marginRight: 10,
-  },
-  btn:{
-    backgroundColor: 'green',
-    margin: 'auto',
-    fontSize: 22,
-    padding: 10,
-    color: 'white'
+  itemImg:{
+    width: '45vw',
+    height: '45vh',
+
   }
+
+
+  // container: {
+  //   padding: 20,
+  //   backgroundColor: '#f0f0f0',
+  // },
+  // header: {
+  //   fontSize: 24,
+  //   fontWeight: 'bold',
+  //   marginBottom: 20,
+  // },
+  // taskContainer: {
+  //   flexDirection: 'row',
+  //   alignItems: 'center',
+  //   marginBottom: 10,
+  //   width: '100%',
+  //   justifyContent: 'space-between',
+  //   borderWidth: 1,
+  //   borderBlockColor: 'green',
+  //   padding: 10,
+  // },
+  // taskText: {
+  //   fontSize: 20,
+  //   marginRight: 10,
+  // },
+  // btn:{
+  //   backgroundColor: 'green',
+  //   margin: 'auto',
+  //   fontSize: 22,
+  //   padding: 10,
+  //   color: 'white'
+  // }
 });
 
 export default PhysicalHealth;
