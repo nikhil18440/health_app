@@ -74,11 +74,11 @@ const styles = StyleSheet.create({
     },
     desc: {
         padding: 15,
-        fontSize: 20
+        fontSize: 30
     },
     para2: {
         padding: 10,
-        fontSize: 20
+        fontSize: 30
     },
     paraHead:{
         fontWeight:700
@@ -89,23 +89,23 @@ const styles = StyleSheet.create({
     DocHead: {
         padding: 15,
         margin: 'auto',
-        fontSize: 20,
+        fontSize: 30,
         fontWeight: '700'
     },
     DocName:{
         padding: 10,
         paddingBottom: 5,
-        fontSize:20
+        fontSize:30
     },
     DocSubHead: {
         padding: 10,
         paddingBottom: 5,
-        fontSize:20
+        fontSize:30
     },
     DocText: {
         padding: 10,
         paddingBottom: 5,
-        fontSize:20
+        fontSize:30
     },
     callIcon:{
         backgroundColor:'lime',

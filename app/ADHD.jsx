@@ -88,7 +88,7 @@ Academic Support: School accommodations like extended time for tests or preferen
 </Text>
 
 </Text>
-
+<iframe style={styles.ytube} width="560" height="315" src="https://www.youtube.com/embed/NCc-EvGcUn0?si=CNs5tjZqTN20f7r6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </View>
   )
 }
@@ -99,4 +99,11 @@ const styles = StyleSheet.create({
     // textCntnt:{
     //     padding: 20
     // }
+    ytube:{
+        padding: 10
+    },
+    textCntnt:{
+        fontSize: 25,
+
+    }
 })

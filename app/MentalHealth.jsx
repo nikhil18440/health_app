@@ -30,24 +30,28 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     fontSize: 25,
     color: 'white',
-    fontWeight: '800'
+    fontWeight: '800',
+    backgroundColor: 'gray'
   },
-  Box1:{
-    backgroundColor: 'blue'
-  },
-  Box2: {
-    backgroundColor:'lime'
-  },
-  Box3: {
-    backgroundColor: 'orange'
-  },
-  Box4:{
-    backgroundColor: 'violet'
-  },
-  Box5:{
-    backgroundColor: 'red'
-  },
-  Box6: {
-    backgroundColor: 'pink'
-  },
+  // Box1:{
+  //   backgroundColor: 'blue'
+  // },
+  // Box2: {
+  //   backgroundColor:'lime'
+  // },
+  // Box3: {
+  //   backgroundColor: 'orange'
+  // },
+  // Box4:{
+  //   backgroundColor: 'violet'
+  // },
+  // Box5:{
+  //   backgroundColor: 'red'
+  // },
+  // Box6: {
+  //   backgroundColor: 'pink'
+  // },
+  // Box:{
+  //   backgroundColor: 'whitesmoke'
+  // }
 })
