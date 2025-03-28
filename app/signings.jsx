@@ -6,7 +6,9 @@ const signings = () => {
     
     <View style={styles.container}>
 
-        <View style={styles.Top}></View>
+        <View style={styles.Top}>
+        <Image source={require('@/assets/images/google.png')}/>
+        </View>
 
         <View style={styles.Bottom}>
             <Pressable>

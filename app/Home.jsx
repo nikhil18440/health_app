@@ -30,10 +30,11 @@ const Home = () => {
         <View style={styles.titem}>
         <ProgressChart
           data={data}
+          // width={Dimensions.get("window").width}
           width={Dimensions.get("window").width}
           height={230}
           strokeWidth={16}
-          radius={32}
+          radius={25}
           chartConfig={chartConfig}
           hideLegend={false}
           style={styles.pBar}
@@ -54,14 +55,14 @@ const Home = () => {
       </View>
       
       <View style={styles.middle}>
-        <View style={styles.titem}>
+        <Link style={styles.titem} href={'/PhysicalHealth'}>
               {/* <Image source={require('@/assets/images/health.png')} style={styles.titemImg}/> */}
               <Image source={require('@/assets/images/muscle.png')} style={styles.mitem}/>
               <View style={styles.titemText}>
                 <Text style={styles.titemText1}>Physical Health</Text>
                 <Text style={styles.titemText2}>focus on physical health</Text>
               </View>
-          </View>
+          </Link>
       </View>
 
       <View style={styles.bottom}>
@@ -175,7 +176,7 @@ const styles = StyleSheet.create({
       resizeMode: 'contain',
     },
     pBar:{
-      margin: 20
+      // margin: 20
     }
 
 })

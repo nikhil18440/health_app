@@ -8,7 +8,7 @@ const index = () => {
     <View style={styles.container1}>
 
         <View style={styles.Top}>
-          {/* <Image style={styles.TopImg} source={require('@/assets/images/heart.png')}/> */}
+          <Image style={styles.TopImg} source={require('@/assets/images/heart.png')}/>
           <Text style={styles.title}>Health App</Text>
         </View>
 

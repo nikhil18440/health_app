@@ -6,10 +6,10 @@ const MentalHealth = () => {
     <View style={styles.container}>
       <Pressable style={[styles.Box, styles.Box1]} href='/Stress'>Stress</Pressable>
       <Pressable style={[styles.Box, styles.Box2]} href='/Bipolar'>Bipolar Disorder</Pressable>
-      <Pressable style={[styles.Box, styles.Box3]} href='/Anxiety'>stress</Pressable>
-      <Pressable style={[styles.Box, styles.Box4]} href='/Anxiety'>stress</Pressable>
+      <Pressable style={[styles.Box, styles.Box3]} href='/ADHD'>ADHD</Pressable>
+      {/* <Pressable style={[styles.Box, styles.Box4]} href='/Anxiety'>stress</Pressable>
       <Pressable style={[styles.Box, styles.Box5]} href='/pullUp'>stress</Pressable>
-      <Pressable style={[styles.Box, styles.Box6]} href='/Anxiety'>stress</Pressable>
+      <Pressable style={[styles.Box, styles.Box6]} href='/Anxiety'>stress</Pressable> */}
       
     </View>
   )
