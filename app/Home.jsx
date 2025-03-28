@@ -8,7 +8,7 @@ const Home = () => {
   let points = 89
 
   const data = {
-    labels: ["Swim", "Bike", "Run"], // optional
+    labels: ["Sit up", "Pull Up", "Push Up"], // optional
     data: [0.4, 0.6, 0.8]
   };
 
