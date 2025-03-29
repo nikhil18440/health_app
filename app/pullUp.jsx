@@ -6,7 +6,7 @@ import { useStore } from '@/stateManagement';
 
 const PullUps = () => {
 
-  const {increment, pullUp, setpullUp} = useStore();
+  const {increment, pullUp, setpullUp, progressInc} = useStore();
   let value = 10
 
   function handlePress() {

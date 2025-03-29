@@ -6,7 +6,7 @@ import { useStore } from '@/stateManagement';
 
 const Running = () => {
 
-    const {increment,running,setrunning} = useStore();
+    const {increment,running,setrunning, progressInc} = useStore();
     let value = 10
 
     function handlePress() {
