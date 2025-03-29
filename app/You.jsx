@@ -1,8 +1,12 @@
 import { View, Text, StyleSheet, Pressable, TextInput } from 'react-native';
 import React, { useState } from 'react';
 import { Link } from 'expo-router';
+import { useStore } from '@/stateManagement';
 
 const You = () => {
+
+  const {user,setUser} = useStore();
+
   const [selectedOptions, setSelectedOptions] = useState([]);
   const options = ['Male', 'Female'];
   const [Age, setAge] = useState(null)
@@ -79,7 +83,7 @@ const You = () => {
           </Link>
         </Pressable>
         <Pressable style={styles.button} disabled={selectedOptions.length >=3 ? true : false}>
-          <Link href='/Home' style={styles.buttonLink} >
+          <Link href='/Home' style={styles.buttonLink} onPress={() => setUser({...user, weight:Weight, height:height, age:Age, gender:selectedOptions[0]})}>
           <Text style={[selectedOptions.length >=3 && { color: 'white' , backgroundColor: '#14A4FE'}]}>Next</Text>
           </Link>
         </Pressable>

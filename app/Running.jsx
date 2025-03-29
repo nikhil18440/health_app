@@ -3,26 +3,26 @@ import React from 'react'
 import { GiTwoCoins } from 'react-icons/gi'
 // import gyro from 'gyroSupport'
 
-const PullUps = () => {
+const Running = () => {
   return (
     <ScrollView style={styles.container}>
         
-      <View style={styles.imgDiv}><Image style={styles.img} source={require('@/assets/images/pullup.jpg')}/></View>
-      <Text style={styles.head}>Pull Ups</Text>
+      <View style={styles.imgDiv}><Image style={styles.img} source={require('@/assets/images/running.jpeg')}/></View>
+      <Text style={styles.head}>Running</Text>
 
-      <Text style={styles.task}><b>Task</b>: Do 30 pullups</Text>
+      <Text style={styles.task}><b>Task</b>: Run 3 km </Text>
       <Text style={styles.reward}><b>Reward</b>: 10 coins <GiTwoCoins color='#795BF6' size={30}/></Text>
-      <View style={styles.stepsDiv}>
+      {/* <View style={styles.stepsDiv}>
         <Text style={styles.steps}><b>Steps:</b></Text>
         <Image style={styles.img2} source={require('@/assets/images/pullups.jpg')}/>
-      </View>
+      </View> */}
       <Text style={styles.track}>Tracking: {0}</Text>
       <Pressable style={styles.btn}>Task Complete</Pressable>
     </ScrollView>
   )
 }
 
-export default PullUps
+export default Running
 
 const styles = StyleSheet.create({
     stepsDiv:{

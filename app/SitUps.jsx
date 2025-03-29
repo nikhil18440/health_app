@@ -1,28 +1,32 @@
 import { View, Text, Image, StyleSheet, Pressable, ScrollView } from 'react-native'
 import React from 'react'
 import { GiTwoCoins } from 'react-icons/gi'
+import { useStore } from '@/stateManagement';
 // import gyro from 'gyroSupport'
 
-const PullUps = () => {
+const SitUps = () => {
+
+    const {user,setUser} = useStore();
+
   return (
     <ScrollView style={styles.container}>
         
-      <View style={styles.imgDiv}><Image style={styles.img} source={require('@/assets/images/pullup.jpg')}/></View>
-      <Text style={styles.head}>Pull Ups</Text>
+      <View style={styles.imgDiv}><Image style={styles.img} source={require('@/assets/images/situps.jpeg')}/></View>
+      <Text style={styles.head}>Sit Ups</Text>
 
-      <Text style={styles.task}><b>Task</b>: Do 30 pullups</Text>
+      <Text style={styles.task}><b>Task</b>: Do 30 sit ups</Text>
       <Text style={styles.reward}><b>Reward</b>: 10 coins <GiTwoCoins color='#795BF6' size={30}/></Text>
       <View style={styles.stepsDiv}>
         <Text style={styles.steps}><b>Steps:</b></Text>
-        <Image style={styles.img2} source={require('@/assets/images/pullups.jpg')}/>
+        <Image style={styles.img2} source={require('@/assets/images/situpS.jpg')}/>
       </View>
       <Text style={styles.track}>Tracking: {0}</Text>
-      <Pressable style={styles.btn}>Task Complete</Pressable>
+      <Pressable style={styles.btn} onPress={() => setUser({...user, coins:user.coins+10})}>Task Complete</Pressable>
     </ScrollView>
   )
 }
 
-export default PullUps
+export default SitUps
 
 const styles = StyleSheet.create({
     stepsDiv:{

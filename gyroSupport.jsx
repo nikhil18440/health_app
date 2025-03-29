@@ -1,0 +1,1 @@
+export const gyro = 0

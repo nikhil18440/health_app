@@ -1,6 +1,7 @@
 import { View, Text, TextInput, StyleSheet, Pressable } from 'react-native'
 import React from 'react'
 import { Link } from 'expo-router'
+import { useStore } from '@/stateManagement'
 
 const welcome = () => {
 
@@ -10,7 +11,7 @@ const welcome = () => {
         name = e
     }
     
-
+    const {user,setUser} = useStore();
 
   return (
     <View style={styles.container}>
@@ -42,6 +43,7 @@ const welcome = () => {
             style={styles.button}
         >
             <Link href='/goals'
+            onPress={() => setUser({...user, name:name})}
             style={styles.buttonLink}>
                 <Text>next</Text>
                     </Link>

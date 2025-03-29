@@ -3,18 +3,18 @@ import React from 'react'
 import { GiTwoCoins } from 'react-icons/gi'
 // import gyro from 'gyroSupport'
 
-const PullUps = () => {
+const PushUps = () => {
   return (
     <ScrollView style={styles.container}>
         
-      <View style={styles.imgDiv}><Image style={styles.img} source={require('@/assets/images/pullup.jpg')}/></View>
-      <Text style={styles.head}>Pull Ups</Text>
+      <View style={styles.imgDiv}><Image style={styles.img} source={require('@/assets/images/pushup.jpg')}/></View>
+      <Text style={styles.head}>PushUps</Text>
 
-      <Text style={styles.task}><b>Task</b>: Do 30 pullups</Text>
+      <Text style={styles.task}><b>Task</b>: Do 30 pushups</Text>
       <Text style={styles.reward}><b>Reward</b>: 10 coins <GiTwoCoins color='#795BF6' size={30}/></Text>
       <View style={styles.stepsDiv}>
         <Text style={styles.steps}><b>Steps:</b></Text>
-        <Image style={styles.img2} source={require('@/assets/images/pullups.jpg')}/>
+        <Image style={styles.img2} source={require('@/assets/images/pushups.jpg')}/>
       </View>
       <Text style={styles.track}>Tracking: {0}</Text>
       <Pressable style={styles.btn}>Task Complete</Pressable>
@@ -22,7 +22,7 @@ const PullUps = () => {
   )
 }
 
-export default PullUps
+export default PushUps
 
 const styles = StyleSheet.create({
     stepsDiv:{

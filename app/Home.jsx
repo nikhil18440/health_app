@@ -6,8 +6,12 @@ import React from 'react'
 import CircularProgress from 'react-native-circular-progress-indicator';
 import { Link } from 'expo-router';
 import { GiTwoCoins } from "react-icons/gi";
+import { FaBowlFood } from "react-icons/fa6";
+import { useStore } from '@/stateManagement'
 
 const Home = () => {
+
+    const user = useStore((state) => state.user);
 
     const day = new Date().getDate()
     const month = new Date().getMonth()
@@ -30,7 +34,7 @@ const Home = () => {
       <View style={styles.topbar}>
         <View style={styles.topLeft}> 
             <Text style={styles.topLeftText1}>Hello,</Text>
-            <Text style={styles.topLeftText2}>Nikhil.k</Text>
+            <Text style={styles.topLeftText2}>{user.name}</Text>
         </View>
         <View style={styles.topRight}> 
             <View style={styles.bellBox}>
@@ -51,7 +55,7 @@ const Home = () => {
   value={100}
   radius={50}
   progressValueColor={'#fff'}
-  duration={10000}
+  duration={3000}
   strokeColorConfig={[
     { color: 'white', value: 0 },
     { color: 'white', value: 50 },
@@ -76,15 +80,19 @@ const Home = () => {
 
         <View style={styles.midLeft}>
             <View style={styles.midDivsTop}>
-                <View style={styles.midDivsTopImg}><LuWeight color='black' size={20}/></View>
+                <View style={[styles.midDivsTopImg, styles.midDivsTopImg1]}><FaBowlFood color='black' size={30}/></View>
                 <View style={styles.midDivsTopText}>Calories</View>
             </View>
+
+            <Text style={styles.midDivsBottom}>1,024 kcal</Text>
+
         </View>
         <View style={styles.midRight}>
             <View style={styles.midDivsTop}>
-                <View style={styles.midDivsTopImg}></View>
-                <View style={styles.midDivsTopText}>Calories</View>
+                <View style={[styles.midDivsTopImg, styles.midDivsTopImg2]}><LuWeight color='black' size={30}/></View>
+                <View style={styles.midDivsTopText}>Weight</View>
             </View>
+            <Text style={styles.midDivsBottom}>{user.weight}</Text>
         </View>
 
         {/* <View style={styles.midRight}></View> */}
@@ -109,6 +117,35 @@ const Home = () => {
 export default Home
 
 const styles = StyleSheet.create({
+    midDivsBottom:{
+        fontSize: 28,
+        color:'white'
+    },
+    midDivsTop:{
+        width:'100%',
+        height:'auto',
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'space-evenly',
+        flexDirection:'row'
+    },
+    midDivsTopText:{
+        color:'gray',
+        fontSize:25
+    },
+    midDivsTopImg1:{
+        backgroundColor:'#795BF6'
+    },
+    midDivsTopImg:{
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center',
+        borderRadius:'50%',
+        padding:10,
+        backgroundColor: 'yellowgreen',
+        width:40,
+        height:40
+    },
     bottomBar:{
         backgroundColor: '#BCB4FD',
         width: '90%',
@@ -123,9 +160,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
         flexDirection:'row'
     },
-    midDivsTopImg:{
-        backgroundColor: 'yellowgreen'
-    },
     midDiv:{
         width:'100vw',
         height: 200,
@@ -137,17 +171,17 @@ const styles = StyleSheet.create({
     },
     midLeft:{
         width: '45%',
-        height: '100%',
+        height: 150,
         backgroundColor: '#2b192f',
-        justifyContent: 'center',
+        justifyContent: 'space-around',
         alignItems: 'center',
         borderRadius: 10
     },
     midRight:{
         width: '45%',
-        height: '100%',
+        height: 150,
         backgroundColor: '#2b192f',
-        justifyContent: 'center',
+        justifyContent: 'space-around',
         alignItems: 'center',
         borderRadius: 10
     },

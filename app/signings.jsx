@@ -17,9 +17,6 @@ const signings = () => {
             <Pressable>
                 <Text>Sign Up</Text>
             </Pressable>
-            <Pressable>
-                <Text>Sign in with Google</Text>
-            </Pressable>
     </View>
 
     </View>

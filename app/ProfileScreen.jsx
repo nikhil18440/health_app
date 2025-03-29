@@ -2,8 +2,12 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Icon from "react-native-vector-icons/Feather";
+import { useStore } from "@/stateManagement";
 
 const ProfileScreen = () => {
+
+  const user = useStore((state) => state.user);
+
   return (
     <View style={styles.container}>
       {/* Profile Header */}
@@ -22,21 +26,21 @@ const ProfileScreen = () => {
         <View style={styles.infoRow}>
           <View style={styles.infoBox}>
             <Text style={styles.infoLabel}>Gender</Text>
-            <Text style={styles.infoValue}>Male</Text>
+            <Text style={styles.infoValue}>{user.gender}</Text>
           </View>
           <View style={styles.infoBox}>
             <Text style={styles.infoLabel}>Age</Text>
-            <Text style={styles.infoValue}>20 yrs</Text>
+            <Text style={styles.infoValue}>{user.age}</Text>
           </View>
         </View>
         <View style={styles.infoRow}>
           <View style={styles.infoBox}>
             <Text style={styles.infoLabel}>Weight</Text>
-            <Text style={styles.infoValue}>76 kg</Text>
+            <Text style={styles.infoValue}>{user.weight}</Text>
           </View>
           <View style={styles.infoBox}>
             <Text style={styles.infoLabel}>Height</Text>
-            <Text style={styles.infoValue}>174 cm</Text>
+            <Text style={styles.infoValue}>{user.height}</Text>
           </View>
         </View>
 

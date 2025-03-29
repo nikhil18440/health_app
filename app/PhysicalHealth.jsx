@@ -45,22 +45,22 @@ const PhysicalHealth = () => {
         </Link>
       )} */}
 
-      <View style={styles.item}>
-        <Image style={styles.itemImg} source={require('@/assets/images/google.png')}/>
+      <Link href={'/PushUps'} style={styles.item}>
+        <Image style={styles.itemImg} source={require('@/assets/images/pushup.jpg')}/>
         <Text style={styles.itemText}>Push Ups</Text>
-      </View>
-      <View style={styles.item}>
-        <Image style={styles.itemImg}/>
-        <Text style={styles.itemText}>Push Ups</Text>
-      </View>
-      <View style={styles.item}>
-        <Image style={styles.itemImg}/>
-        <Text style={styles.itemText}>Push Ups</Text>
-      </View>
-      <View style={styles.item}>
-        <Image style={styles.itemImg}/>
-        <Text style={styles.itemText}>Push Ups</Text>
-      </View>
+      </Link>
+      <Link href={'/pullUp'} style={styles.item}>
+        <Image style={styles.itemImg} source={require('@/assets/images/pullup.jpg')}/>
+        <Text style={styles.itemText}>Pull Ups</Text>
+      </Link>
+      <Link href={'/SitUps'} style={styles.item}>
+        <Image style={styles.itemImg} source={require('@/assets/images/situps.jpeg')}/>
+        <Text style={styles.itemText}>Sit Ups</Text>
+      </Link>
+      <Link href={'/Running'} style={styles.item}>
+        <Image style={styles.itemImg} source={require('@/assets/images/running.jpeg')}/>
+        <Text style={styles.itemText}>Running</Text>
+      </Link>
     </View>
   );
 }
@@ -70,13 +70,37 @@ const styles = StyleSheet.create({
   container:{
     width: '100vw',
     height:'100vh',
-    backgroundColor:'black'
+    backgroundColor:'black',
+    display:'flex',
+    // flexDirection:'row',
+    flexWrap:'wrap'
   },
   itemImg:{
-    width: '45vw',
-    height: '45vh',
-
+    width: '90vw',
+    height: 180,
+    borderRadius: 20
+    // marginTop: 20
+    // backgroundColor:'red'
+  },
+  item:{
+    width: '100vw',
+    height: 200,
+    display:'flex',
+    alignItems:'center',
+    justifyContent:'center',
+    position:'relative'
+  },
+  itemText:{
+    color:'white',
+    position:'absolute',
+    // bottom: 0,
+    top:'35%',
+    left:"35%",
+    fontSize: 30,
+    fontWeight:700
+    // right:0
   }
+
 
 
   // container: {

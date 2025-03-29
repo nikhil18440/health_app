@@ -19,9 +19,7 @@ const index = () => {
             <Link href={'/signup'} style={styles.button}>
                 <Text>Sign Up</Text>
             </Link>
-            <Link href={''} style={styles.button}>
-                <Text>Sign in with Google</Text>
-            </Link>
+
     </View>
 
     </View>
