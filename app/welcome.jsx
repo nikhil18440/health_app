@@ -21,9 +21,10 @@ const welcome = () => {
         <Text style={styles.head2}>We'd like to get to know you.</Text>
 
         {/* <br /> */}
-        <Text>Prefered first name</Text>
+        <Text style={styles.text}>Prefered first name</Text>
         <TextInput
                 style={styles.input}
+                placeholder='your name'
                 placeholderTextColor="grey"
                 onChange={(e) => handleName(e)}
             />
@@ -57,7 +58,7 @@ const welcome = () => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor:'white',
+        backgroundColor:'black',
         height: '100%',
         display: 'flex',
         padding: 15,
@@ -71,18 +72,22 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         marginBottom: 10,
         padding: 10,
-        marginTop: 5
+        marginTop: 5,
+        color:'white',
+        
         // backgroundColor: 'white'
     },
     head1: {
         fontSize: 22,
         marginTop: 10,
-        fontWeight: 700
+        fontWeight: 700,
+        color:'white'
     },
     head2: {
         fontSize:15,
         marginBottom: 20,
-        fontWeight: 500
+        fontWeight: 500,
+        color:'lightgray'
     },
     button:{
         backgroundColor: '#14A4FE',
@@ -106,6 +111,9 @@ const styles = StyleSheet.create({
     },
     buttonLink:{
         color: 'white'
+    },
+    text:{
+        color:'white'
     }
 })
 

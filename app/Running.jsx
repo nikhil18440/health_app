@@ -6,8 +6,15 @@ import { useStore } from '@/stateManagement';
 
 const Running = () => {
 
-    const {increment} = useStore();
+    const {increment,running,setrunning} = useStore();
     let value = 10
+
+    function handlePress() {
+        increment(value)
+        progressInc()
+        setrunning()
+        console.log(progress)
+    }
 
   return (
     <ScrollView style={styles.container}>
@@ -22,7 +29,7 @@ const Running = () => {
         <Image style={styles.img2} source={require('@/assets/images/pullups.jpg')}/>
       </View> */}
       <Text style={styles.track}>Tracking: {0}</Text>
-      <Pressable style={styles.btn} onPress={() => increment(value)}>Task Complete</Pressable>
+      { !running && <Pressable style={styles.btn} onPress={() => handlePress()}>Task Complete</Pressable>}
     </ScrollView>
   )
 }

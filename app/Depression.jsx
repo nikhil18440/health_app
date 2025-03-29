@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, ImageBackground, Dimensions, ScrollView, Image,
 import React from 'react'
 import { Linking } from 'react-native';
 
-const Stress = () => {
+const Depression = () => {
 
     
 
@@ -18,35 +18,75 @@ const makeCall = (phoneNumber) => {
     // <View>
     <ScrollView style={styles.mainDiv}>
       {/* <Text>Stress</Text> */}
-      <Text style={styles.desc}><b>Stress</b> is a common part of daily life that everyone experiences. It can arise from various sources, like work, studies, relationships, or financial issues. While a little stress can motivate us to stay focused and productive, too much of it can lead to negative effects on our health, mood, and overall well-being. Learning to manage stress through healthy habits like regular exercise, proper sleep, and relaxation techniques can help us handle daily challenges more effectively.</Text>
+      <Text style={styles.desc}><b>Attention-Deficit/Hyperactivity Disorder (ADHD)</b> is a neurodevelopmental disorder that affects children, adolescents, and adults. It is characterized by persistent patterns of inattention, hyperactivity, and impulsivity that interfere with daily life, learning, and relationships.</Text>
     
-       <Text style={[styles.para2, styles.paraHead]}>To control stress effectively, consider these measures:</Text>
+       <Text style={[styles.para2, styles.paraHead]}>Depression is a mental health disorder characterized by persistent feelings of sadness, hopelessness, and a loss of interest in activities that one typically enjoys. It can also affect a person’s physical health, leading to changes in appetite, sleep patterns, and energy levels. Depression is more than just feeling down; it's a serious condition that can impact daily life and require treatment.</Text>
 
-<Text style={styles.para2}>1. Exercise Regularly: Physical activity releases endorphins, which can boost mood and reduce stress.</Text>
+       <Text style={styles.text}>Symptoms of Depression:
+
+<br/>Persistent sadness, emptiness, or hopelessness
+
+<br/>Loss of interest in activities once enjoyed
+
+<br/>Changes in appetite and weight
+
+<br/>Sleep disturbances (insomnia or oversleeping)
+
+<br/>Fatigue or lack of energy
+
+<br/>Difficulty concentrating or making decisions
+
+<br/>Feelings of worthlessness or excessive guilt
+
+<br/>Thoughts of death or suicide</Text>
+
+       <Text style={styles.text}>How to Control Depression:
+
+<br/>1. Seek Professional Help:
+
+Consult a mental health professional like a psychologist or psychiatrist for an accurate diagnosis.
+
+Therapy or counseling can help address underlying issues.
 
 
-<Text style={styles.para2}>2. Practice Relaxation Techniques: Deep breathing, meditation, and yoga can help calm the mind.</Text>
 
+<br/>2. Medication:
 
-<Text style={styles.para2}>3. Maintain a Healthy Lifestyle: Eat a balanced diet, stay hydrated, and get enough sleep.</Text>
+Antidepressants can be prescribed by psychiatrists to balance brain chemicals.
 
-
-<Text style={styles.para2}>4. Manage Time Effectively: Plan your tasks, set priorities, and avoid procrastination.</Text>
-
-
-<Text style={styles.para2}>5. Talk to Someone: Share your feelings with a friend, family member, or counselor.</Text>
-
-
-<Text style={styles.para2}>6. Take Breaks: Short breaks during work or study can help refresh your mind.</Text>
-
-
-<Text style={styles.para2}>7. Limit Caffeine and Alcohol: These can increase stress levels if consumed excessively.</Text>
+It's important to take medication as directed and discuss any side effects.
 
 
 
-<Text style={styles.para2}>By applying these strategies, you can better handle stress and maintain a healthier, more balanced life.</Text> 
+<br/>3. Lifestyle Changes:
 
-<iframe style={styles.ytubeVid} width="400" height="300" src="https://www.youtube.com/embed/U5odrIsm-60?si=enaFSLQ5Y45Bm3_9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Regular physical activity can increase the production of endorphins, which elevate mood.
+
+Maintaining a balanced diet with adequate nutrition can impact mood positively.
+
+Proper sleep hygiene: maintaining a regular sleep schedule and avoiding screens before bedtime.
+
+
+
+<br/>4. Stress Management:
+
+Practice relaxation techniques like deep breathing, meditation, or yoga.
+
+Reduce stress by managing workload and maintaining a healthy work-life balance.
+
+
+
+<br/>5. Social Support:
+
+Talking to friends, family, or support groups can provide emotional support.
+
+Avoid isolation, even if it feels comfortable.
+
+</Text>
+
+
+
+<iframe width="560" height="315" style={styles.ytubeVid} src="https://www.youtube.com/embed/NCc-EvGcUn0?si=XNDn8d8SCE1JBKZD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <Text style={styles.DocHead}>Contact a Doctor</Text>
 
@@ -67,11 +107,17 @@ const makeCall = (phoneNumber) => {
   )
 }
 
-export default Stress
+export default Depression
 
 const styles = StyleSheet.create({
+  text:{
+    color: 'white',
+    fontSize: 28,
+    padding: 15
+  },
     mainDiv:{
-        backgroundColor:'black'
+        backgroundColor:'black',
+        padding: 10
     },
    
     container: {

@@ -60,7 +60,7 @@ const what = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor: 'black',
     height: '100%',
     display: 'flex',
     padding: 15,
@@ -78,11 +78,13 @@ const styles = StyleSheet.create({
   head1: {
     fontSize: 22,
     marginTop: 10,
-    fontWeight: 700
+    fontWeight: 700,
+    color: 'whitesmoke'
   },
   head2: {
     fontSize: 15,
     marginBottom: 20,
+    color: 'white',
     fontWeight: 500
   },
   button: {

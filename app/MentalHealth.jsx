@@ -20,8 +20,8 @@ const MentalHealth = () => {
         <Image source={require('@/assets/images/bipolar.jpg')} style={styles.containerItem}/>
       </Link>
 
-      <Link href={'/Anxiety'} style={styles.linkDiv}>
-        <Text style={styles.linkDivText}>Anxiety</Text>
+      <Link href={'/Depression'} style={styles.linkDiv}>
+        <Text style={styles.linkDivText}>Depression</Text>
         <Image source={require('@/assets/images/anxiety.jpg')} style={styles.containerItem}/>
       </Link>
 

@@ -18,7 +18,7 @@ const goals = () => {
     <View style={styles.container}>
       <View style={styles.top}>
         <Text style={styles.head1}>Let's start with goals</Text>
-        <Text id='textView'>Select up to 3 that are important to you</Text>
+        <Text id='textView'style={styles.head2}>Select up to 3 that are important to you</Text>
         <View style={styles.optionsContainer}>
           {options.map((option, index) => (
             <Pressable 
@@ -60,7 +60,7 @@ const goals = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor: 'black',
     height: '100%',
     display: 'flex',
     padding: 15,
@@ -78,12 +78,14 @@ const styles = StyleSheet.create({
   head1: {
     fontSize: 22,
     marginTop: 10,
-    fontWeight: 700
+    fontWeight: 700,
+    color: 'white'
   },
   head2: {
     fontSize: 15,
     marginBottom: 20,
-    fontWeight: 500
+    fontWeight: 500,
+    color: 'gray'
   },
   button: {
     backgroundColor: '#14A4FE',

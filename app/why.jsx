@@ -60,7 +60,7 @@ const why = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor: 'black',
     height: '100%',
     display: 'flex',
     padding: 15,
@@ -78,12 +78,14 @@ const styles = StyleSheet.create({
   head1: {
     fontSize: 22,
     marginTop: 10,
-    fontWeight: 700
+    fontWeight: 700,
+    color: 'white'
   },
   head2: {
     fontSize: 15,
     marginBottom: 20,
-    fontWeight: 500
+    fontWeight: 500,
+    color: 'gray'
   },
   button: {
     backgroundColor: '#14A4FE',

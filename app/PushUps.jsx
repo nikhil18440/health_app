@@ -1,13 +1,23 @@
 import { View, Text, Image, StyleSheet, Pressable, ScrollView } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { GiTwoCoins } from 'react-icons/gi'
 import { useStore } from '@/stateManagement';
 // import gyro from 'gyroSupport'
 
 const PushUps = () => {
 
-    const {increment} = useStore();
+    const {increment,progressInc, progress, pushUp, setpushUp} = useStore();
         let value = 10
+    // const {progress} = useStore
+
+    function handlePress() {
+        increment(value)
+        progressInc()
+        setpushUp()
+        console.log(progress)
+    }
+
+
 
   return (
     <ScrollView style={styles.container}>
@@ -22,7 +32,9 @@ const PushUps = () => {
         <Image style={styles.img2} source={require('@/assets/images/pushups.jpg')}/>
       </View>
       <Text style={styles.track}>Tracking: {0}</Text>
-      <Pressable style={styles.btn} onPress={() => increment(value)}>Task Complete</Pressable>
+     {
+        !pushUp &&  <Pressable style={styles.btn} onPress={() => handlePress()}>Task Complete</Pressable>
+     }
     </ScrollView>
   )
 }

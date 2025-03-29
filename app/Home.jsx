@@ -2,7 +2,7 @@ import { View, Text, ScrollView, StyleSheet, Image, Pressable } from 'react-nati
 import {GoArrowUpRight, GoBell, GoBellFill, GoHomeFill} from 'react-icons/go'
 import {LuBrain, LuWeight} from 'react-icons/lu'
 import {FaBrain} from 'react-icons/fa'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CircularProgress from 'react-native-circular-progress-indicator';
 import { Link } from 'expo-router';
 import { GiTwoCoins } from "react-icons/gi";
@@ -12,6 +12,15 @@ import { useStore } from '@/stateManagement'
 const Home = () => {
 
     const user = useStore((state) => state.user);
+    const {progress} = useStore()
+
+    // const [progressChange, setProgressChange] = useState(0)
+    
+    // useEffect(() => {
+    //   setProgressChange(progress)
+    //   console.log(progress)
+    // }, [])
+    
 
     const day = new Date().getDate()
     const month = new Date().getMonth()
@@ -52,7 +61,7 @@ const Home = () => {
         <View style={styles.pbar}>
         <CircularProgress
         
-  value={100}
+  value={progress}
   radius={50}
   progressValueColor={'#fff'}
   duration={3000}

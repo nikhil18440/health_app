@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, TextInput, Pressable, Image, Dimensions } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { Colors } from '@/constants/Colors'
 import { Link, Stack } from 'expo-router'
 import names from '@/constants/generalNames.js'
@@ -7,6 +7,12 @@ import names from '@/constants/generalNames.js'
 const signup = () => {
 
     // const {width,height} = useWindowDimensions()
+
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
 
   return (
         <View style={styles.container}>
@@ -21,34 +27,41 @@ const signup = () => {
                     style={styles.input}
                     placeholder="First Name"
                     placeholderTextColor="grey"
+                    onChange={(e) => setFirstName(e.target.value)}
                 />
                 <TextInput 
                     style={styles.input}
                     placeholder="Last Name"
                     placeholderTextColor='grey'
+                    onChange={(e) => setLastName(e.target.value)}
+
                 />
                 <TextInput 
                     style={styles.input}
                     placeholder="Email"
                     placeholderTextColor="grey"
+                    onChange={(e) => setEmail(e.target.value)}
+
                 />
                 <TextInput 
                     style={styles.input}
                     secureTextEntry={true}
                     placeholder="Password"
                     placeholderTextColor='grey'
+                    onChange={(e) => setPassword(e.target.value)}
+
                 />
                 <Link
-                href={'/welcome'}
+                href={firstName && lastName && email && password ? '/welcome' : '/signup'}
                     style={styles.button}
                 >
                     <Text style={styles.btnText}>SIGN UP</Text>
                 </Link>
 
                 <View style={styles.Signup}>
-                    <Text>already a user? </Text>
+                    <Text style={styles.text}>already a user? </Text>
                     <Link href='login' style={styles.register}>
-                        <Text>Sign In</Text>
+                        <Text style={styles.text}>Sign In</Text>
                     </Link>
                 </View>
                 
@@ -63,8 +76,12 @@ const signup = () => {
 export default signup
 
 const styles = StyleSheet.create({
+    text:{
+        color:'white'
+    },
+
     container: {
-        backgroundColor:'white',
+        backgroundColor:'black',
         height: '100%',
         display: 'flex',
         flexDirection: 'column-reverse'
@@ -94,6 +111,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         marginBottom: 10,
         padding: 10,
+        color: 'white'
         // backgroundColor: 'white'
     },
     button:{
@@ -119,7 +137,8 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 900,
         color:'rgb(31, 31, 31)',
-        marginBottom: 30
+        marginBottom: 30,
+        color:'white'
     }
 
 })
