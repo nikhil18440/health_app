@@ -6,7 +6,8 @@ import { useStore } from '@/stateManagement';
 
 const SitUps = () => {
 
-    const {user,setUser} = useStore();
+    const {increment} = useStore();
+    let value = 10
 
   return (
     <ScrollView style={styles.container}>
@@ -21,7 +22,7 @@ const SitUps = () => {
         <Image style={styles.img2} source={require('@/assets/images/situpS.jpg')}/>
       </View>
       <Text style={styles.track}>Tracking: {0}</Text>
-      <Pressable style={styles.btn} onPress={() => setUser({...user, coins:user.coins+10})}>Task Complete</Pressable>
+      <Pressable style={styles.btn} onPress={() => increment(value)}>Task Complete</Pressable>
     </ScrollView>
   )
 }

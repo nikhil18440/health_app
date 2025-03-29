@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, TextInput, Pressable, Image, Dimensions, KeyboardAvoidingView, InputAccessoryView } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { Colors } from '@/constants/Colors'
 import { Link, Stack } from 'expo-router'
 import names from '@/constants/generalNames.js'
@@ -7,6 +7,9 @@ import names from '@/constants/generalNames.js'
 const login = () => {
 
     // const {width,height} = useWindowDimensions()
+
+    const [email, setEmail] = useState(null)
+    const [Password, setPassword] = useState(null)
 
   return (
     
@@ -23,29 +26,32 @@ const login = () => {
         style={styles.input}
         placeholder="Email"
         placeholderTextColor="grey"
+        onChange={(e) => setEmail(e.target.value)}
     />
     <TextInput 
         style={styles.input}
         placeholder="Password"
         placeholderTextColor='grey'
         secureTextEntry={true}
+        onChange={(e) => setPassword(e.target.value)}
+
     />
     <Link 
-        href={'/Home'}
+        href={email && Password ? '/Home' : '/login'}
         style={styles.button}
     >
         <Text style={styles.btnText}>LOGIN</Text>
     </Link>
 
     <View style={styles.Signup}>
-        <Text>dont't have an account? </Text>
+        <Text style={styles.text}>dont't have an account? </Text>
         <Link href='/signup' style={styles.register}>
             <Text>Sign Up</Text>
         </Link>
     </View>
     <br />
     <View>
-        <Text>or login with</Text>
+        <Text style={styles.text}>or login with</Text>
     </View>
     <br />
     <View style={styles.logos}>
@@ -67,8 +73,11 @@ const login = () => {
 export default login
 
 const styles = StyleSheet.create({
+    text:{
+        color:'white'
+    },
     container: {
-        backgroundColor:'white',
+        backgroundColor:'black',
         height: '100%',
         display: 'flex',
         flexDirection: 'column-reverse'
@@ -98,6 +107,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         marginBottom: 10,
         padding: 10,
+        color: 'white'
         // backgroundColor: 'white'
     },
     button:{
@@ -114,15 +124,17 @@ const styles = StyleSheet.create({
     },
     register:{
         textDecorationLine: 'underline',
+        color:'white'
     },
     Signup:{
         display:'flex',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        color:'white'
     },
     inputTitle:{
         fontSize: 30,
         fontWeight: 900,
-        color:'rgb(31, 31, 31)',
+        color:'whitesmoke',
         marginBottom: 30
     },
     logo: {

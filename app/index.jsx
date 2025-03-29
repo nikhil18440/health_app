@@ -31,7 +31,7 @@ export default index
 
 const styles = StyleSheet.create({
     container1: {
-        backgroundColor: '#14A4FE',
+        backgroundColor: '#795BF6',
         width: '100%',
         height: '100%',
     },
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     Bottom: {
         height: '50%',
         width: '100%',
-        backgroundColor: 'white',
+        backgroundColor: 'black',
         borderTopLeftRadius: 60,
         borderTopRightRadius: 60,
         display: 'flex',

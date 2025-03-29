@@ -8,8 +8,10 @@ export const useStore = create((set) => ({
     gender: 'male',
     height: 170,
   },
+  
   coins: 500,
   setUser: (user) => set({user}),
+  increment: (value) => set((state) => ({ coins: state.coins + value })),
   redeemItem: (cost) =>
     set((state) =>
       state.coins >= cost
