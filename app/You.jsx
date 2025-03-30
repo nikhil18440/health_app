@@ -5,7 +5,8 @@ import { useStore } from '@/stateManagement';
 
 const You = () => {
 
-  const {user,setUser} = useStore();
+  const user = useStore((state) => state.user);
+  const {setUser} = useStore();
 
   const [selectedOptions, setSelectedOptions] = useState([]);
   const options = ['Male', 'Female'];
@@ -18,8 +19,13 @@ const You = () => {
       setSelectedOptions(selectedOptions.filter((item) => item !== option));
     } else if (selectedOptions.length < 1) {
       setSelectedOptions([...selectedOptions, option]);
+      // setUser({...user,gender:option})
     }
   };
+
+  function handleAllPress() {
+    setUser({...user, weight:Weight, height:height, age:Age})
+  }
 
   console.log(Age, Weight, height)
 
@@ -83,7 +89,7 @@ const You = () => {
           </Link>
         </Pressable>
         <Pressable style={styles.button} disabled={selectedOptions.length >=3 ? true : false}>
-          <Link href='/Home' style={styles.buttonLink} onPress={() => setUser({...user, weight:Weight, height:height, age:Age, gender:selectedOptions[0]})}>
+          <Link href='/Home' style={styles.buttonLink} onPress={() => handleAllPress()}>
           <Text style={[selectedOptions.length >=3 && { color: 'white' , backgroundColor: '#14A4FE'}]}>Next</Text>
           </Link>
         </Pressable>

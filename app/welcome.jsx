@@ -8,10 +8,10 @@ const welcome = () => {
     let name = null
 
     const handleName = (e) => {
-        name = e
+        name = e.target.value
     }
-    
-    const {user,setUser} = useStore();
+    const user = useStore((state) => state.user);
+    const {setUser} = useStore();
 
   return (
     <View style={styles.container}>

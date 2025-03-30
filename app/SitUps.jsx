@@ -13,7 +13,6 @@ const SitUps = () => {
         increment(value)
         progressInc()
         setsitUp()
-        console.log(progress)
     }
 
   return (

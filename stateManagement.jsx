@@ -14,9 +14,9 @@ export const useStore = create((set) => ({
   sitUp: false,
   running: false,
   setpushUp: () => set(() => ({pushUp: true})),
-  setpullUp: () => set(() => ({pushUp: true})),
-  setsitUp: () => set(() => ({pushUp: true})),
-  setrunning: () => set(() => ({pushUp: true})),
+  setpullUp: () => set(() => ({pullUp: true})),
+  setsitUp: () => set(() => ({sitUp: true})),
+  setrunning: () => set(() => ({running: true})),
 
 
   progress: 0,

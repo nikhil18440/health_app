@@ -13,7 +13,7 @@ const PullUps = () => {
     increment(value)
     progressInc()
     setpullUp()
-    console.log(progress)
+    // console.log(progress)
 }
 
 

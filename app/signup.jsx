@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Colors } from '@/constants/Colors'
 import { Link, Stack } from 'expo-router'
 import names from '@/constants/generalNames.js'
+import axios from 'axios'
 
 const signup = () => {
 
@@ -12,7 +13,30 @@ const signup = () => {
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [success, setSuccess] = useState(false)
+    const [error, setError] = useState(false)
 
+    async function handleSubmit() {
+        try {
+            const res = await axios.post(`http://localhost:5000/api/auth/register`, {
+                email: email,
+                password: password,
+                phoneNumber: "9951535138",
+                firstName: firstName,
+                lastName: lastName,
+              })
+              if(res.data){
+                setSuccess(true)
+                setError(false)
+              }
+              console.log(res.data)
+        
+        } catch (error) {
+            setError(true)
+            setSuccess(false)
+            console.log(error)
+        }
+    }
 
   return (
         <View style={styles.container}>
@@ -51,9 +75,13 @@ const signup = () => {
                     onChange={(e) => setPassword(e.target.value)}
 
                 />
+                {
+                    error && <Text style={styles.error}>wrong credentials</Text>
+                }
                 <Link
-                href={firstName && lastName && email && password ? '/welcome' : '/signup'}
-                    style={styles.button}
+                href={firstName && lastName && email && password && success ? '/welcome' : '/signup'}
+                onPress={() => handleSubmit()}    
+                style={styles.button}
                 >
                     <Text style={styles.btnText}>SIGN UP</Text>
                 </Link>
@@ -76,6 +104,9 @@ const signup = () => {
 export default signup
 
 const styles = StyleSheet.create({
+    error:{
+        color:'red'
+    },
     text:{
         color:'white'
     },
