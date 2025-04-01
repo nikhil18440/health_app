@@ -8,11 +8,25 @@ import { Link } from 'expo-router';
 import { GiTwoCoins } from "react-icons/gi";
 import { FaBowlFood } from "react-icons/fa6";
 import { useStore } from '@/stateManagement'
+import { Gyroscope } from 'expo-sensors'
 
 const Home = () => {
 
     const user = useStore((state) => state.user);
     const {progress} = useStore()
+
+    const requestPermissions = async () => {
+        const { status } = await Gyroscope.requestPermissionsAsync();
+        console.log(status)
+        if (status !== "granted") {
+            console.log('permission denied')
+        //   Alert.alert("Permission Denied", "Gyroscope access is required for this feature.");
+        }
+      };
+      
+      useEffect(() => {
+        requestPermissions();
+      }, []);
 
     // const [progressChange, setProgressChange] = useState(0)
     

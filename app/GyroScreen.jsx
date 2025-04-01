@@ -1,42 +1,36 @@
-// import React, { useEffect, useState } from "react";
-// import { View, Text, StyleSheet } from "react-native";
-// import { Gyroscope } from "react-native-sensors";
+import React, { useEffect, useState } from "react";
+import { View, Text } from "react-native";
+import { Gyroscope } from "expo-sensors";
 
-// const GyroScreen = () => {
-//   const [gyroData, setGyroData] = useState({ x: 0, y: 0, z: 0 });
+const GyroScreen = () => {
+  const [gyroData, setGyroData] = useState({ x: 0, y: 0, z: 0 });
 
-//   useEffect(() => {
-//     const subscription = new Gyroscope({
-//       updateInterval: 100, // Updates every 100ms
-//     }).subscribe(({ x, y, z }) => {
-//       setGyroData({ x, y, z });
-//     });
+  useEffect(() => {
+    let subscription;
 
-//     return () => subscription.unsubscribe(); // Clean up on unmount
-//   }, []);
+    const subscribe = async () => {
+      subscription = Gyroscope.addListener((data) => {
+        setGyroData(data);
+      });
+    };
 
-//   return (
-//     <View style={styles.container}>
-//       <Text style={styles.title}>Gyroscope Readings</Text>
-//       <Text>X: {gyroData.x.toFixed(2)}</Text>
-//       <Text>Y: {gyroData.y.toFixed(2)}</Text>
-//       <Text>Z: {gyroData.z.toFixed(2)}</Text>
-//     </View>
-//   );
-// };
+    subscribe();
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: "center",
-//     alignItems: "center",
-//     backgroundColor: "#f5f5f5",
-//   },
-//   title: {
-//     fontSize: 20,
-//     fontWeight: "bold",
-//     marginBottom: 10,
-//   },
-// });
+    return () => {
+      if (subscription) {
+        subscription.remove();
+      }
+    };
+  }, []);
 
-// export default GyroScreen;
+  return (
+    <View>
+      <Text>Gyroscope Data:</Text>
+      <Text>X: {gyroData.x.toFixed(2)}</Text>
+      <Text>Y: {gyroData.y.toFixed(2)}</Text>
+      <Text>Z: {gyroData.z.toFixed(2)}</Text>
+    </View>
+  );
+};
+
+export default GyroScreen;

@@ -16,27 +16,27 @@ const signup = () => {
     const [success, setSuccess] = useState(false)
     const [error, setError] = useState(false)
 
-    async function handleSubmit() {
-        try {
-            const res = await axios.post(`http://localhost:5000/api/auth/register`, {
-                email: email,
-                password: password,
-                phoneNumber: "9951535138",
-                firstName: firstName,
-                lastName: lastName,
-              })
-              if(res.data){
-                setSuccess(true)
-                setError(false)
-              }
-              console.log(res.data)
+    // async function handleSubmit() {
+    //     try {
+    //         const res = await axios.post(`http://localhost:5000/api/auth/register`, {
+    //             email: email,
+    //             password: password,
+    //             phoneNumber: "9951535138",
+    //             firstName: firstName,
+    //             lastName: lastName,
+    //           })
+    //           if(res.data){
+    //             setSuccess(true)
+    //             setError(false)
+    //           }
+    //           console.log(res.data)
         
-        } catch (error) {
-            setError(true)
-            setSuccess(false)
-            console.log(error)
-        }
-    }
+    //     } catch (error) {
+    //         setError(true)
+    //         setSuccess(false)
+    //         console.log(error)
+    //     }
+    // }
 
   return (
         <View style={styles.container}>
@@ -75,12 +75,12 @@ const signup = () => {
                     onChange={(e) => setPassword(e.target.value)}
 
                 />
-                {
+                {/* {
                     error && <Text style={styles.error}>wrong credentials</Text>
-                }
+                } */}
                 <Link
-                href={firstName && lastName && email && password && success ? '/welcome' : '/signup'}
-                onPress={() => handleSubmit()}    
+                href={firstName && lastName && email && password ? '/welcome' : '/signup'}
+                // onPress={() => handleSubmit()}    
                 style={styles.button}
                 >
                     <Text style={styles.btnText}>SIGN UP</Text>

@@ -14,24 +14,24 @@ const login = () => {
     const [success, setSuccess] = useState(false)
     const [error, setError] = useState(false)
 
-    async function handleSubmit() {
-        try {
-            const res = await axios.post(`http://localhost:5000/api/auth/login`, {
-                email: email,
-                password: Password
-              })
+    // async function handleSubmit() {
+    //     try {
+    //         const res = await axios.post(`http://localhost:5000/api/auth/login`, {
+    //             email: email,
+    //             password: Password
+    //           })
 
-              if(res.data){
-                setSuccess(true)
-                setError(false)
-              }
-              console.log(res.data)
-        } catch (error) {
-            setError(true)
-            setSuccess(false)
-        }
+    //           if(res.data){
+    //             setSuccess(true)
+    //             setError(false)
+    //           }
+    //           console.log(res.data)
+    //     } catch (error) {
+    //         setError(true)
+    //         setSuccess(false)
+    //     }
             
-    }
+    // }
 
   return (
     
@@ -58,13 +58,13 @@ const login = () => {
         onChange={(e) => setPassword(e.target.value)}
 
     />
-    {
+    {/* {
         error && <Text style={styles.error}>wrong credentials</Text>
-    }
+    } */}
     
     <Link 
-        href={email && Password && success ? '/Home' : '/login'}
-        onPress={() => handleSubmit()}
+        href={email && Password ? '/Home' : '/login'}
+        // onPress={() => handleSubmit()}
         style={styles.button}
     >
         <Text style={styles.btnText}>LOGIN</Text>
